@@ -2,3 +2,7 @@
 	path = nanovg
 	url = https://github.com/RobDangerous/nanovg
 	branch = master
+[submodule "Kha"]
+	path = Kha
+	url = https://github.com/Kode/Kha.git
+	branch = master
