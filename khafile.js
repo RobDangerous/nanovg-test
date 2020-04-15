@@ -1,6 +1,8 @@
-let project = new Project('New Project');
+let project = new Project('nanovg test');
 project.addAssets('Assets/**');
 project.addShaders('Shaders/**');
 project.addSources('Sources');
-project.addSources('nanovg/src');
+
+await project.addProject('nanovg');
+
 resolve(project);
