@@ -16,10 +16,12 @@ class Main {
 		g.begin(true, Color.fromBytes(0, 95, 106));
 
 		var vg: NVGcontext = NVG.nvgCreateKha(NVGcreateFlags.NVG_ANTIALIAS | NVGcreateFlags.NVG_STENCIL_STROKES);
+		NVG.nvgBeginFrame(vg, frames[0].width, frames[0].height, 1.0);
 		NVG.nvgBeginPath(vg);
 		NVG.nvgRect(vg, 100,100, 120,30);
 		NVG.nvgFillColor(vg, NVG.nvgRGBA(255,192,0,255));
 		NVG.nvgFill(vg);
+		NVG.nvgEndFrame(vg);
 
 		g.end();
 	}
