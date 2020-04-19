@@ -5,6 +5,7 @@ import kha.Color;
 import kha.Framebuffer;
 import kha.Scheduler;
 import kha.System;
+import nanovg.KhaContext;
 import nanovg.NVG;
 
 class Main {
@@ -12,10 +13,13 @@ class Main {
 	}
 
 	static function render(frames: Array<Framebuffer>): Void {
-		final g = frames[0].g2;
-		g.begin(true, Color.fromBytes(0, 95, 106));
+		final g = frames[0].g4;
+		g.begin();
+		g.clear(Color.Cyan);
 
 		var vg: NVGcontext = NVG.nvgCreateKha(NVGcreateFlags.NVG_ANTIALIAS | NVGcreateFlags.NVG_STENCIL_STROKES);
+		var context: KhaContext = vg.params.userPtr;
+		context.g = g;
 		NVG.nvgBeginFrame(vg, frames[0].width, frames[0].height, 1.0);
 		NVG.nvgBeginPath(vg);
 		NVG.nvgRect(vg, 100,100, 120,30);
