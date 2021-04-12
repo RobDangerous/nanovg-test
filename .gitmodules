@@ -5,4 +5,4 @@
 [submodule "Kha"]
 	path = Kha
 	url = https://github.com/Kode/Kha.git
-	branch = master
+	branch = twosidedstencil
