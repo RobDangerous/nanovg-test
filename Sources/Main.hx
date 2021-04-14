@@ -20,8 +20,9 @@ class Main {
 		var context: KhaContext = vg.params.userPtr;
 		context.g = g;
 		NVG.nvgBeginFrame(vg, frames[0].width, frames[0].height, 1.0);
-		test1(vg);
-		test2(vg);
+		// test1(vg);
+		// test2(vg);
+		test3(vg);
 		NVG.nvgEndFrame(vg);
 
 		g.end();
@@ -41,6 +42,20 @@ class Main {
 		NVG.nvgPathWinding(vg, NVGsolidity.NVG_HOLE); // Mark circle as a hole.
 		NVG.nvgFillColor(vg, NVG.nvgRGBA(255, 192, 0, 255));
 		NVG.nvgFill(vg);
+	}
+
+	static function test3(vg: NVGcontext): Void {
+		var nCaretX = 100;
+		var rect_y = 200;
+		var rect_w = 150;
+		NVG.nvgLineCap(vg, NVGlineCap.NVG_ROUND);
+		NVG.nvgLineJoin(vg, NVGlineCap.NVG_ROUND);
+		NVG.nvgStrokeWidth(vg, 1);
+		NVG.nvgStrokeColor(vg, NVG.nvgRGBA(255, 192, 0, 255));
+		NVG.nvgBeginPath(vg);
+		NVG.nvgMoveTo(vg, nCaretX, rect_y);
+		NVG.nvgLineTo(vg, nCaretX, rect_y + rect_w);
+		NVG.nvgStroke(vg);
 	}
 
 	public static function main() {
