@@ -74,7 +74,7 @@ class Main {
 		System.start({title: "nanovg", width: 1024, height: 768}, function(_) {
 			Assets.loadEverything(() -> {
 				vg = NVG.nvgCreateKha(NVGcreateFlags.NVG_ANTIALIAS | NVGcreateFlags.NVG_STENCIL_STROKES);
-				image = NVG.nvgCreateImage(vg, "parrot", 0);
+				image = NVG.nvgCreateImage(vg, kha.Assets.images.parrot, 0);
 
 				Scheduler.addTimeTask(update, 0, 1 / 60);
 				System.notifyOnFrames(render);
