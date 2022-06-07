@@ -23,9 +23,9 @@ class Main {
 		context.g = g;
 		NVG.nvgBeginFrame(vg, frames[0].width, frames[0].height, 1.0);
 		//test1(vg);
-		//test2(vg);
+		test2(vg);
 		//test3(vg);
-		test4(vg);
+		//test4(vg);
 		NVG.nvgEndFrame(vg);
 
 		g.end();
